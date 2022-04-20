@@ -1,0 +1,55 @@
+﻿
+@model ExamenUni1.Models.ViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <br /><br /><br />
+    <div class="container">
+
+        <h3>Lista de estrudaintes</h3>
+        <table class="table" id="listaresultados">
+            <thead class="text-primary">
+                <tr>
+                    <td>Copdigo</td>
+                    <td>Noimbre</td>
+                    <td>apellido</td>
+                    <td>promedio</td>
+                    <td>Condicion</td>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model.lista)
+                {
+                    <tr>
+                        <td>@item.codigo</td>
+                        <td>@item.nombres</td>
+                        <td>@item.apellidos</td>
+                        <td>@item.promedio</td>
+                        <td> <button class="@item.color">  @item.condicion </button>  </td>
+                        
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+        <label> Promedio @Model.promedioNotas</label> <br />
+        <label> promasx @Model.promax</label><br />
+        <label> promin @Model.promin</label><br />
+        <label> cantiadaopriabs @Model.cantidadAprobados</label><br />
+        <label> cantida desaprobados @Model.cantidadDesaAprobados</label>
+    </div>
+</body>
+</html>
